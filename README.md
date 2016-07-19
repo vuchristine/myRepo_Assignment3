@@ -11,6 +11,7 @@ Complete the code in pngPlay.c and pixutils.c to make the binary pngPlay which c
 Examples
 
 `pngPlay -i input.png -o output.png -r 60.6 -g`
-`pngPlay -o output.png -g -i input.png `
+
+`pngPlay -o output.png -g -i input.png`
 
 Additional details are available on Canvas and in comments in the files. A working Makefile is provided as are two sample 32 bit png's.
