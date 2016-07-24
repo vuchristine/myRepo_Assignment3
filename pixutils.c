@@ -64,6 +64,13 @@ void pixMap_rotate (pixMap *p, float theta){
 	    //calculate the new rotated coordinates rotx roty using the formula from 
 	    //http://stackoverflow.com/questions/2259476/rotating-a-point-about-another-point-2d
 	    //use the answer from stackoverflowery
+	    
+	    //However this answer assumes that y is going from the bottom to the top (mathematical convention)
+	    //but the pixmap starts at the upper left hand corner and height grows DOWN (scan order)
+	    //so use this formula instead where c is cos(theta) and s is sin(theta)
+	    //    float rotx = c*(x-ox) - s * (oy-y) + ox;
+     //    float roty = -(s*(x-ox) + c * (oy-y) - oy);
+	    
  	   //round the coordinates to the nearest integer in your calculations (add 0.5 and cast to integer)	
 	
 	    //if rotated coordinates are within the height and width limits
