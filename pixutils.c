@@ -67,7 +67,7 @@ void pixMap_rotate (pixMap *p, float theta){
 	    
 	    //However this answer assumes that y is going from the bottom to the top (mathematical convention)
 	    //but the pixmap starts at the upper left hand corner and height grows DOWN (scan order)
-	    //so use this formula instead where c is cos(theta) and s is sin(theta)
+	    //so use this formula instead where c is cos(degreesToRadians(theta)) and s is sin(degreeToRadians(theta))
 	    //    float rotx = c*(x-ox) - s * (oy-y) + ox;
      //    float roty = -(s*(x-ox) + c * (oy-y) - oy);
 	    
