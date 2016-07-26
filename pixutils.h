@@ -34,5 +34,6 @@ void pixMap_destroy (pixMap *p); //call pixMap_reset, free p and set pointer to 
 
 //public methods
 int pixMap_write(pixMap *p,char *filename); //use lodepng to write to a file
+void pixMap_write_bmp16(pixMap *p,char *filename); //convert to correct format
 void pixMap_rotate (pixMap *p, float theta); //rotate the pixMap
 void pixMap_gray(pixMap *p); //gray out the colors of the pixMap
