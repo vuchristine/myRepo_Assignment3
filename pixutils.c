@@ -56,26 +56,28 @@ void pixMap_rotate (pixMap *p, float theta){
  //set the values in the image to zero using memset - Note that the 3rd argument of memset is the size in BYTES
 
  //calculate the coordinates ox and oy of the middle of the png graphic
- //calculate the values of sine and cosine used by the rotation formula 
+ //calculate the values of sine and cosine used by the rotation formula FOR -theta
 
-	//for(int y=0;y<p->height;y++){   //two for loops to loop through each pixel in the original
+
+
+	//for(int y=0;y<p->height;y++){   //two for loops to loop through each pixel in the new rotated image
 	 //for(int x=0;x<p->width;x++){
 	 
-	    //calculate the new rotated coordinates rotx roty using the formula from 
+	    //calculate the old coordinates rotx roty by rotating by -theta and using the formula described here
 	    //http://stackoverflow.com/questions/2259476/rotating-a-point-about-another-point-2d
 	    //use the answer from stackoverflowery
 	    
 	    //However this answer assumes that y is going from the bottom to the top (mathematical convention)
 	    //but the pixmap starts at the upper left hand corner and height grows DOWN (scan order)
-	    //so use this formula instead where c is cos(degreesToRadians(theta)) and s is sin(degreeToRadians(theta))
+	    //so use this formula instead where c is cos(degreesToRadians(-theta)) and s is sin(degreeToRadians(-theta))
 	    //    float rotx = c*(x-ox) - s * (oy-y) + ox;
      //    float roty = -(s*(x-ox) + c * (oy-y) - oy);
 	    
  	   //round the coordinates to the nearest integer in your calculations (add 0.5 and cast to integer)	
 	
-	    //if rotated coordinates are within the height and width limits
+	    //if old coordinates are within the height and width limits
 	      //copy the pixel at the old coords to the pixel to the temporary copy using memcpy
-	      //i.e. 	memcpy(temp->pixArray[roty]+rotx,p->pixArray[y]+x,sizeof(rgba))
+	      //i.e. 	memcpy(temp->pixArray[y]+x,p->pixArray[roty]+rotx,sizeof(rgba))
 	    //
 	    
 	  //
